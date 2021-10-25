@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalhes da música</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item>
+    <ion-label>Habilitar edição</ion-label>
+    <ion-toggle color = "primary" [(ngModel)]="_editar"></ion-toggle>
+  </ion-item>
+
+  <ion-list>
+    <form [formGroup] = "_formDetalhar" (ngSubmit) = "submitForm()" novalidate>
+
+    <ion-item lines ="none">
+      <ion-label position="floating">Nome da música</ion-label>
+      <ion-input [disabled] = "_editar" type="text" formControlName="nomemusica"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Nome do artista</ion-label>
+      <ion-input [disabled] = "_editar" type="text" formControlName="nomeartista"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Ano de lançamento</ion-label>
+      <ion-input [disabled] = "_editar" type="number" formControlName="ano"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Número de músicas</ion-label>
+      <ion-input [disabled] = "_editar" type="number" formControlName="numeromusicas"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Gravadora</ion-label>
+      <ion-input [disabled] = "_editar" type="text" formControlName="gravadora"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Gênero</ion-label>
+      <ion-input [disabled] = "_editar" type="text" formControlName="genero"></ion-input>
+    </ion-item>
+    <ion-item lines ="none">
+      <ion-label position="floating">Tema lírico</ion-label>
+      <ion-input [disabled] = "_editar" type="text" formControlName="tema"></ion-input>
+    </ion-item>
+    <ion-item lines = "none">
+      <ion-button [disabled] = "_editar" size="default" color = "primary" type = "submit"></ion-button> <ion-icon slot = "end" name = "create"></ion-icon></ion-button>
+      <ion-button [disabled] = "_editar" size="default" color = "danger" (click)="excluir()">Excluir <ion-icon slot = "end" name = "trash"></ion-icon></ion-button>
+    </ion-item>
+  </form>
+  </ion-list>
+</ion-content>

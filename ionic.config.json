@@ -1,0 +1,7 @@
+{
+  "name": "appmusicatrab1",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

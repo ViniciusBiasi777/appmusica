@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastrar músicas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <form [formGroup] = "_formCadastrar" (ngSubmit) = "submitForm()" novalidate>
+      <ion-item lines="none">
+      <ion-label position="floating">Nome da música</ion-label>
+      <ion-input type="text" formControlName="nomemusica"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Nome do artista</ion-label>
+      <ion-input type="text" formControlName="nomeartista"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Ano de lançamento</ion-label>
+      <ion-input type="number" formControlName="ano"></ion-input>
+    </ion-item>
+    <span *ngIf="_isSubmitted && errorControl.nomemusica.errors?.required">Ano é obrigatório</span>
+    <ion-item lines="none">
+      <ion-label position="floating">Número de músicas</ion-label>
+      <ion-input type="number" formControlName="numeromusicas"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Gravadora</ion-label>
+      <ion-input type="text" formControlName="gravadora"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Gênero</ion-label>
+      <ion-input type="text" formControlName="genero"></ion-input>
+    </ion-item>
+    
+    <ion-item lines="none">
+      <ion-label position="floating">Tema lírico</ion-label>
+      <ion-input type="text" formControlName="tema"></ion-input>
+    </ion-item>
+    <span *ngIf="_isSubmitted && errorControl.nomemusica.errors?.required">Tema é obrigatório</span>
+      <ion-button expand="full" type="submit">Cadastrar</ion-button>
+    </form>
+    </ion-list>
+</ion-content>
